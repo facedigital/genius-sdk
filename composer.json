@@ -12,5 +12,8 @@
         "psr-4": {
             "": "./src/"
         }
+    },
+    "require-dev": {
+        "wsdltophp/packagegenerator": "^4.1"
     }
 }

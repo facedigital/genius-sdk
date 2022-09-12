@@ -206,6 +206,14 @@ class CreateLearner extends AbstractStructBase
      */
     protected ?string $Mothername = null;
     /**
+     * The fatherName
+     * Meta information extracted from the WSDL
+     * - maxOccurs: 1
+     * - minOccurs: 0
+     * @var string|null
+     */
+    protected ?string $fatherName = null;
+    /**
      * The ProgramCode
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
@@ -261,6 +269,14 @@ class CreateLearner extends AbstractStructBase
      * @var string|null
      */
     protected ?string $DiscountDescription = null;
+    /**
+     * The DownPaymentMethod
+     * Meta information extracted from the WSDL
+     * - maxOccurs: 1
+     * - minOccurs: 0
+     * @var string|null
+     */
+    protected ?string $DownPaymentMethod = null;
     /**
      * The Balance
      * Meta information extracted from the WSDL
@@ -334,6 +350,14 @@ class CreateLearner extends AbstractStructBase
      */
     protected ?string $foreignerDocument = null;
     /**
+     * The highSchoolConclusionType
+     * Meta information extracted from the WSDL
+     * - maxOccurs: 1
+     * - minOccurs: 0
+     * @var string|null
+     */
+    protected ?string $highSchoolConclusionType = null;
+    /**
      * Constructor method for CreateLearner
      * @uses CreateLearner::setIsForeigner()
      * @uses CreateLearner::setLiveInBrazil()
@@ -359,6 +383,7 @@ class CreateLearner extends AbstractStructBase
      * @uses CreateLearner::setRace()
      * @uses CreateLearner::setSpecialNeed()
      * @uses CreateLearner::setMothername()
+     * @uses CreateLearner::setFatherName()
      * @uses CreateLearner::setProgramCode()
      * @uses CreateLearner::setLmsTermIndex()
      * @uses CreateLearner::setTotalAmount()
@@ -366,6 +391,7 @@ class CreateLearner extends AbstractStructBase
      * @uses CreateLearner::setDownPaymentDate()
      * @uses CreateLearner::setDownPaymentDiscount()
      * @uses CreateLearner::setDiscountDescription()
+     * @uses CreateLearner::setDownPaymentMethod()
      * @uses CreateLearner::setBalance()
      * @uses CreateLearner::setInstallments()
      * @uses CreateLearner::setRecurrentPaymentId()
@@ -375,6 +401,7 @@ class CreateLearner extends AbstractStructBase
      * @uses CreateLearner::setPlannedDisciplinesFirstSeries()
      * @uses CreateLearner::setEntranceType()
      * @uses CreateLearner::setForeignerDocument()
+     * @uses CreateLearner::setHighSchoolConclusionType()
      * @param bool $isForeigner
      * @param bool $liveInBrazil
      * @param string $token
@@ -399,6 +426,7 @@ class CreateLearner extends AbstractStructBase
      * @param string $race
      * @param \ArrayType\ArrayOfString $specialNeed
      * @param string $mothername
+     * @param string $fatherName
      * @param string $programCode
      * @param string $lmsTermIndex
      * @param string $totalAmount
@@ -406,6 +434,7 @@ class CreateLearner extends AbstractStructBase
      * @param string $downPaymentDate
      * @param string $downPaymentDiscount
      * @param string $discountDescription
+     * @param string $downPaymentMethod
      * @param string $balance
      * @param string $installments
      * @param string $recurrentPaymentId
@@ -415,8 +444,9 @@ class CreateLearner extends AbstractStructBase
      * @param string $plannedDisciplinesFirstSeries
      * @param string $entranceType
      * @param string $foreignerDocument
+     * @param string $highSchoolConclusionType
      */
-    public function __construct(bool $isForeigner, bool $liveInBrazil, ?string $token = null, ?string $firstName = null, ?string $lastName = null, ?string $socialName = null, ?string $gender = null, ?string $dOB = null, ?string $email = null, ?string $phone = null, ?string $sSN = null, ?string $addressZIPCode = null, ?string $addressStreet = null, ?string $addressNumber = null, ?string $addressComplement = null, ?string $addressNeighborhood = null, ?string $addressCity = null, ?string $addressState = null, ?string $addressCountry = null, ?string $cityOfBirth = null, ?string $stateOfBirth = null, ?string $race = null, ?\ArrayType\ArrayOfString $specialNeed = null, ?string $mothername = null, ?string $programCode = null, ?string $lmsTermIndex = null, ?string $totalAmount = null, ?string $downPayment = null, ?string $downPaymentDate = null, ?string $downPaymentDiscount = null, ?string $discountDescription = null, ?string $balance = null, ?string $installments = null, ?string $recurrentPaymentId = null, ?string $invoicingStartDate = null, ?string $paymentId = null, ?string $plannedNumberOfDisciplines = null, ?string $plannedDisciplinesFirstSeries = null, ?string $entranceType = null, ?string $foreignerDocument = null)
+    public function __construct(bool $isForeigner, bool $liveInBrazil, ?string $token = null, ?string $firstName = null, ?string $lastName = null, ?string $socialName = null, ?string $gender = null, ?string $dOB = null, ?string $email = null, ?string $phone = null, ?string $sSN = null, ?string $addressZIPCode = null, ?string $addressStreet = null, ?string $addressNumber = null, ?string $addressComplement = null, ?string $addressNeighborhood = null, ?string $addressCity = null, ?string $addressState = null, ?string $addressCountry = null, ?string $cityOfBirth = null, ?string $stateOfBirth = null, ?string $race = null, ?\ArrayType\ArrayOfString $specialNeed = null, ?string $mothername = null, ?string $fatherName = null, ?string $programCode = null, ?string $lmsTermIndex = null, ?string $totalAmount = null, ?string $downPayment = null, ?string $downPaymentDate = null, ?string $downPaymentDiscount = null, ?string $discountDescription = null, ?string $downPaymentMethod = null, ?string $balance = null, ?string $installments = null, ?string $recurrentPaymentId = null, ?string $invoicingStartDate = null, ?string $paymentId = null, ?string $plannedNumberOfDisciplines = null, ?string $plannedDisciplinesFirstSeries = null, ?string $entranceType = null, ?string $foreignerDocument = null, ?string $highSchoolConclusionType = null)
     {
         $this
             ->setIsForeigner($isForeigner)
@@ -443,6 +473,7 @@ class CreateLearner extends AbstractStructBase
             ->setRace($race)
             ->setSpecialNeed($specialNeed)
             ->setMothername($mothername)
+            ->setFatherName($fatherName)
             ->setProgramCode($programCode)
             ->setLmsTermIndex($lmsTermIndex)
             ->setTotalAmount($totalAmount)
@@ -450,6 +481,7 @@ class CreateLearner extends AbstractStructBase
             ->setDownPaymentDate($downPaymentDate)
             ->setDownPaymentDiscount($downPaymentDiscount)
             ->setDiscountDescription($discountDescription)
+            ->setDownPaymentMethod($downPaymentMethod)
             ->setBalance($balance)
             ->setInstallments($installments)
             ->setRecurrentPaymentId($recurrentPaymentId)
@@ -458,7 +490,8 @@ class CreateLearner extends AbstractStructBase
             ->setPlannedNumberOfDisciplines($plannedNumberOfDisciplines)
             ->setPlannedDisciplinesFirstSeries($plannedDisciplinesFirstSeries)
             ->setEntranceType($entranceType)
-            ->setForeignerDocument($foreignerDocument);
+            ->setForeignerDocument($foreignerDocument)
+            ->setHighSchoolConclusionType($highSchoolConclusionType);
     }
     /**
      * Get IsForeigner value
@@ -1009,6 +1042,29 @@ class CreateLearner extends AbstractStructBase
         return $this;
     }
     /**
+     * Get fatherName value
+     * @return string|null
+     */
+    public function getFatherName(): ?string
+    {
+        return $this->fatherName;
+    }
+    /**
+     * Set fatherName value
+     * @param string $fatherName
+     * @return \StructType\CreateLearner
+     */
+    public function setFatherName(?string $fatherName = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($fatherName) && !is_string($fatherName)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fatherName, true), gettype($fatherName)), __LINE__);
+        }
+        $this->fatherName = $fatherName;
+        
+        return $this;
+    }
+    /**
      * Get ProgramCode value
      * @return string|null
      */
@@ -1166,6 +1222,29 @@ class CreateLearner extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($discountDescription, true), gettype($discountDescription)), __LINE__);
         }
         $this->DiscountDescription = $discountDescription;
+        
+        return $this;
+    }
+    /**
+     * Get DownPaymentMethod value
+     * @return string|null
+     */
+    public function getDownPaymentMethod(): ?string
+    {
+        return $this->DownPaymentMethod;
+    }
+    /**
+     * Set DownPaymentMethod value
+     * @param string $downPaymentMethod
+     * @return \StructType\CreateLearner
+     */
+    public function setDownPaymentMethod(?string $downPaymentMethod = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($downPaymentMethod) && !is_string($downPaymentMethod)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($downPaymentMethod, true), gettype($downPaymentMethod)), __LINE__);
+        }
+        $this->DownPaymentMethod = $downPaymentMethod;
         
         return $this;
     }
@@ -1373,6 +1452,29 @@ class CreateLearner extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($foreignerDocument, true), gettype($foreignerDocument)), __LINE__);
         }
         $this->foreignerDocument = $foreignerDocument;
+        
+        return $this;
+    }
+    /**
+     * Get highSchoolConclusionType value
+     * @return string|null
+     */
+    public function getHighSchoolConclusionType(): ?string
+    {
+        return $this->highSchoolConclusionType;
+    }
+    /**
+     * Set highSchoolConclusionType value
+     * @param string $highSchoolConclusionType
+     * @return \StructType\CreateLearner
+     */
+    public function setHighSchoolConclusionType(?string $highSchoolConclusionType = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($highSchoolConclusionType) && !is_string($highSchoolConclusionType)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($highSchoolConclusionType, true), gettype($highSchoolConclusionType)), __LINE__);
+        }
+        $this->highSchoolConclusionType = $highSchoolConclusionType;
         
         return $this;
     }
